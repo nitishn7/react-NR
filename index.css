@@ -1,3 +1,48 @@
-#header1 {
-    color: red;
+.app {
+	.header {
+		display: flex;
+		justify-content: space-between;
+		border: 1px solid green;
+
+		.logo {
+			width: 200px;
+		}
+
+		.nav-items {
+			padding: 0 20px;
+			> ul {
+				display: flex;
+				font-size: 24px;
+				> li {
+					padding: 10px;
+					margin: 10px;
+					list-style-type: none;
+				}
+			}
+		}
+	}
+
+	.body {
+		.search {
+			padding: 10px;
+		}
+		.restaurant-container {
+			display: flex;
+			flex-wrap: wrap;
+			.res-card {
+				margin: 5px;
+				width: 200px;
+				height: auto;
+				padding: 5px;
+
+				.res-logo {
+					width: 100%;
+				}
+			}
+		}
+	}
+}
+.res-card:hover {
+	border: 1px solid black;
+	cursor: pointer;
 }
