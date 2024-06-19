@@ -9,7 +9,7 @@ class UserClass extends React.Component {
 		};
 	}
 	componentDidMount() {
-		console.log("Child mounted");
+		console.log("Child mounted!");
 	}
 
 	render() {

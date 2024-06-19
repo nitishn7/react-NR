@@ -8,7 +8,7 @@ class ContactUs extends Component {
 	}
 
 	componentDidMount() {
-		console.log("parent mounted");
+		console.log("parent mounted!");
 	}
 	render() {
 		return (
