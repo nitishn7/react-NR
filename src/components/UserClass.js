@@ -4,32 +4,40 @@ class UserClass extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			count: 0,
-			count2: 1,
+			userInfo: {
+				name: "Dummy initial name",
+				location: "Dummy initial location",
+			},
 		};
 	}
-	componentDidMount() {
-		console.log("Child mounted!");
+	async componentDidMount() {
+		this.timer = setInterval(() => {
+			console.log(
+				"this set Interval has to be cleared while unMounting the component since SPA will keep it in memory."
+			);
+		}, 1000);
+		const data = await fetch("https://api.github.com/users/nitishn7");
+		const json = await data.json();
+
+		this.setState({
+			userInfo: json,
+		});
+		console.log(json);
+	}
+
+	componentWillUnmount() {
+		clearInterval(this.timer);
+		console.log("Component Unmounted");
 	}
 
 	render() {
-		const { name, location } = this.props;
-		const { count } = this.state;
+		const { name, location, avatar_url } = this.state.userInfo;
 		return (
 			<div className="user-card">
-				<h1>Count: {count}</h1>
-				<button
-					onClick={() => {
-						this.setState({
-							count: this.state.count + 1,
-						});
-					}}
-				>
-					Click me!
-				</button>
+				<img src={avatar_url} />
 				<h2>Name: {name}</h2>
 				<h3>Location: {location}</h3>
-				<h4>Contact: PanditBKL</h4>
+				<h4>Contact: PanditBKL </h4>
 			</div>
 		);
 	}

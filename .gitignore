@@ -3,3 +3,5 @@ dist
 .parcel-cache
 .cache
 yarn.lock
+.DS_Store
+src/.DS_Store

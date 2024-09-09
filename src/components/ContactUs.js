@@ -1,4 +1,4 @@
-import User from "./User";
+// import User from "./User";
 import UserClass from "./UserClass";
 import { Component } from "react";
 
@@ -15,11 +15,7 @@ class ContactUs extends Component {
 			<div className="contact-us-container">
 				<h1>You can contact us at:</h1>
 				<div className="user-card-container">
-					{/* <User name={"Nitish"} location={"Vas Legas"} /> */}
-					<UserClass
-						name={"ClassName"}
-						location={"father of Object"}
-					/>
+					<UserClass name={"Nitish"} location={"San Jose"} />
 				</div>
 			</div>
 		);
